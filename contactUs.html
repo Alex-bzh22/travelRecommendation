@@ -2,8 +2,8 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Contactez-nous</title>
-  <link rel="stylesheet" href="./health_analysis.css">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="./travelReco.css">
   <style>
     body{
         text-align: center;
@@ -29,43 +29,55 @@
     #contactForm button:hover {
       background-color: #0056b3;
     }
+
+    /* Centrer le contenu de la page */
+    body {
+            /* Remplacez l'URL par le chemin de votre image */
+            background-image: url('./travelToFrance.jpg');
+            background-size: cover; /* Couvre toute la zone sans déformer l'image */
+            background-position: center; /* Centrer l'image */
+            background-repeat: no-repeat; /* Ne pas répéter l'image */
+            height: 100vh; /* Hauteur de la fenêtre */
+            margin: 0; /* Supprimer la marge par défaut */
+        }
   </style>
 </head>
 <body>
-  <nav><h1>Analyse de la santé</h1>
-    <ul>
-      <li><a href="./index.html" id="home">Accueil </a></li>
-      <li><a href="./health_contact.html" id="contact">Contactez-nous </a></li>
-      </li>
+    <nav><!--img src="logo.png" alt="Logo" width="10" height="10" /--><h1>TravelBloom</h1>
+        <ul>
+          <li><a href="./travel_recommendation.html" id="home">Home </a></li>
+          <li><a href="./aboutUs.html" id="about">About Us</a></li>
+          <li><a href="./contactUs.html" id="contact">Contact Us</a></li>
+        </ul>
+        
+        <!--ul>
+          <li><input type="text" id="destinationInput" class="search-input" placeholder="Enter a destination">  </li>
+          <li><button id='btnSearch'>Search</button></li>
+          <li><button id='clear'>Clear</button>  </li>
+        </ul-->
+        </nav>
 
-    </ul>
-    </nav>
-  <h1>Contactez-nous</h1>
-  <p>N'hésitez pas à nous contacter pour en savoir plus sur vos conditions et sur les méthodes de traitement.</p>
-
-  <form id="contactForm">
-    <div>
-      <label for="name">Nom</label>
-      <input type="text" id="name" name="name" required>
+<h1>CONTACT US</h1>
+  <form class="transparent-form">
+    <div class="form-group">
+      <label for="name">Nom :</label>
+      <input type="text" id="name" name="name" placeholder="Your name" required>
     </div>
-    <div>
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
+    <div class="form-group">
+      <label for="image">Email :</label>
+      <input type="text" id="image" name="image" placeholder="Your email" required>
     </div>
-    <div>
-      <label for="condition">Condition</label>
-      <input type="text" id="condition" name="condition" required>
+    <div class="form-group">
+      <label for="message">Message :</label>
+      <textarea id="message" name="message" rows="4" placeholder="Your message" required></textarea>
     </div>
-    <div>
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
-    </div>
-    <button type="submit" onclick="thankyou()">Soumettre</button>
+    <button type="submit">Submit</button>
   </form>
-  <script>
+  
+  <!--script>
     function thankyou(){
         alert('Merci de nous avoir contactés !')
     }
-  </script>
+  </script-->
 </body>
 </html>

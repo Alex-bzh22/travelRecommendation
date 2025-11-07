@@ -6,7 +6,7 @@
     box-sizing: border-box;
 }
 nav {
-    background-color: #f0f0f0;
+    background-color: #84b990;
     padding: 20px;
     display: flex;
     align-items: center;
@@ -77,3 +77,66 @@ input.search-input:focus {
   box-shadow: 0 0 8px rgba(76, 175, 80, 0.2);
   outline: none;
 }
+
+/*////////////////////////////////////////////*
+/* Style général du formulaire transparent */
+.transparent-form {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    margin: auto;
+  }
+  
+  /* Groupes de champs */
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  /* Labels */
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  /* Inputs et textarea */
+  input[type="text"],
+  input[type="file"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    background: transparent;
+    color: #fff;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  input[type="text"]:focus,
+  input[type="file"]:focus,
+  textarea:focus {
+    border-color: #4CAF50;
+    outline: none;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
+  }
+  
+  /* Bouton */
+  button {
+    background-color: rgba(76, 175, 80, 0.8);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: rgba(76, 175, 80, 1);
+  }
