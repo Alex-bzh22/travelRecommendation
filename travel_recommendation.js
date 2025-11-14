@@ -1,41 +1,46 @@
 
 
 const btnSearch = document.getElementById('btnSearch');
+const btnclear = document.getElementById('btnClear');
+
 
 function searchDestination() {
         const input = document.getElementById('destinationInput').value.toLowerCase();
         const resultDiv = document.getElementById('result');
         resultDiv.innerHTML = '';
-
+        const regextemp = /^temple/g;
+        const regexbeach = /^beach/g;
+        const regexcount = /^country|countries/g;
+        let key="";
+        if (input.match(regextemp)){
+            console.log("match regex for templessss")
+            key = "temples";
+            }
+        else if (input.match(regexcount)){
+            key = "countries";
+            }
+        else if (input.match(regexbeach)){
+            key = "beaches";
+            }
         fetch('travel_recommendation_api.json')
           .then(response => response.json())
           .then(data => {
            const countries = data.countries.find(item => item.name.toLowerCase() === input);
-           //const temples = data.temples.find(item => item.name.toLowerCase() === input);
-           //const beaches = data.beaches.find(item => item.name.toLowerCase() === input);
+           
+           console.log("key is : " + key)
            console.log(data)
-           /////////////////////////////////////
-           // il faut trouver le moeyn de tester si le mot clé tmples, plage, countries fait bien partie de data.
-           /////////////////////////////////////
-            //const key = data.find(item => item.toLowerCase() === input);
-            //const key = data.conditions.find(item => item.name.toLowerCase() === input);
-                if (data[input]){
-                    if (input == "countries"){
-                        data[input].forEach(item => {
+                if (data[key]){
+                    if (key == "countries"){
+                        data[key].forEach(item => {
                             resultDiv.innerHTML += `<h2>${item.name}</h2>`;
                             resultDiv.innerHTML += `<h2>${item.cities[0].name}</h2>`;
                             resultDiv.innerHTML += `<img src="${item.cities[0].imageUrl}" alt="description" width="300px">`;
-                    });
-                        /*$data[input].cities.forEach(item => {
-                            resultDiv.innerHTML += `<h3>${item.name}</h3>`;    
-                            resultDiv.innerHTML += `<h4>${item.description}</h4>`;
-                            resultDiv.innerHTML += `<img src="${item.imageUrl}" alt="description" width="300px">`;
-                        });*/
+                        });
                     }
                     else{
-                        console.log("key existe : " + data[input])
-                        console.log(data[input])
-                        data[input].forEach(item => {
+                        console.log("key existe : " + data[key])
+                        console.log(data[key])
+                        data[key].forEach(item => {
                             console.log("pour chaque item le nom : " + item.name);
                             resultDiv.innerHTML += `<h2>${item.name}</h2>`;
                             resultDiv.innerHTML += `<h4>${item.description}</h4>`;
@@ -69,12 +74,14 @@ function searchDestination() {
             console.error('Error:', error);
             resultDiv.innerHTML = 'An error occurred while fetching data.';
           });
+          document.getElementById("destinationInput").value = "";
       }
 btnSearch.addEventListener('click', searchDestination);
-              /*
-                            const symptoms = countries.symptoms.join(', ');
-              const prevention = condition.prevention.join(', ');
-              const treatment = condition.treatment;
-              resultDiv.innerHTML += `<p><strong>Symptoms:</strong> ${symptoms}</p>`;
-              resultDiv.innerHTML += `<p><strong>Prevention:</strong> ${prevention}</p>`;
-              resultDiv.innerHTML += `<p><strong>Treatment:</strong> ${treatment}</p>`;*/
+
+function clearDestination() {
+    const resultDiv = document.getElementById('result');
+    resultDiv.innerHTML = '';
+    resultDiv.innerHTML = '';
+
+}
+btnClear.addEventListener('click', clearDestination);
