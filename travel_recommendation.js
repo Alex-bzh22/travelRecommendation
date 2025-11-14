@@ -19,7 +19,20 @@ function searchDestination() {
            /////////////////////////////////////
             //const key = data.find(item => item.toLowerCase() === input);
             //const key = data.conditions.find(item => item.name.toLowerCase() === input);
-                if (data[input] && input!="countries"){
+                if (data[input]){
+                    if (input == "countries"){
+                        data[input].forEach(item => {
+                            resultDiv.innerHTML += `<h2>${item.name}</h2>`;
+                            resultDiv.innerHTML += `<h2>${item.cities[0].name}</h2>`;
+                            resultDiv.innerHTML += `<img src="${item.cities[0].imageUrl}" alt="description" width="300px">`;
+                    });
+                        /*$data[input].cities.forEach(item => {
+                            resultDiv.innerHTML += `<h3>${item.name}</h3>`;    
+                            resultDiv.innerHTML += `<h4>${item.description}</h4>`;
+                            resultDiv.innerHTML += `<img src="${item.imageUrl}" alt="description" width="300px">`;
+                        });*/
+                    }
+                    else{
                         console.log("key existe : " + data[input])
                         console.log(data[input])
                         data[input].forEach(item => {
@@ -29,6 +42,7 @@ function searchDestination() {
                             resultDiv.innerHTML += `<img src="${item.imageUrl}" alt="description" width="300px">`;
                           });
                         }
+                }
                 else if (countries){
                     console.log("saisie existe : One country" + countries.name)
                     resultDiv.innerHTML += `<h2>${countries.name}</h2>`;
