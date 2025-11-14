@@ -28,8 +28,18 @@ nav {
     text-decoration: none;
     color: #333;
     font-weight: bold;
+    color: white;
+    font-size: 20px;
+    font-family: Tahoma,sans-serif;
   }
-
+  nav a:hover {
+   color: rgb(220, 241, 173);
+}
+/*Style titre*/
+h1{
+    color:white;
+    font-size: 25px;
+}
   /* Style général pour les boutons */
 button {
   padding: 10px 20px;
