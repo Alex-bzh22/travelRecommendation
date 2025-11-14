@@ -10,7 +10,7 @@ function searchDestination() {
         fetch('travel_recommendation_api.json')
           .then(response => response.json())
           .then(data => {
-           //const countries = data.countries.find(item => item.name.toLowerCase() === input);
+           const countries = data.countries.find(item => item.name.toLowerCase() === input);
            //const temples = data.temples.find(item => item.name.toLowerCase() === input);
            //const beaches = data.beaches.find(item => item.name.toLowerCase() === input);
            console.log(data)
@@ -18,21 +18,30 @@ function searchDestination() {
            // il faut trouver le moeyn de tester si le mot clé tmples, plage, countries fait bien partie de data.
            /////////////////////////////////////
             //const key = data.find(item => item.toLowerCase() === input);
-            data.forEach(item => {
-                console.log(item);
-              });
-            if (data) {
+            //const key = data.conditions.find(item => item.name.toLowerCase() === input);
+                if (data[input]){
+                        console.log("key existe : " + data[input])
+                        console.log(data[input])
+                        data[input].forEach(item => {
+                            console.log("pour chaque item le nom : " + item.name);
+                            resultDiv.innerHTML += `<h2>${item.name}</h2>`;
+                            resultDiv.innerHTML += `<h2>${item.description}</h2>`;
+                            resultDiv.innerHTML += `<img src="${item.imageUrl}" alt="description" width="300px">`;
+                          });
+                        }
+                else if (countries){
+                    console.log("saisie existe : One country" + countries.name)
+                    resultDiv.innerHTML += `<h2>${countries.name}</h2>`;
+                    countries.cities.forEach(item => {
+                    resultDiv.innerHTML += `<h2>${item.description}</h2>`;
+                    resultDiv.innerHTML += `<img src="${item.imageUrl}" alt="description" width="300px">`;`;
+                    });
+                }
 
-
-              resultDiv.innerHTML += `<h2>${data.input.name}</h2>`;
-              //resultDiv.innerHTML += `<img src="${countries.cities.description}" alt="hjh">`;
-            
-
-            } 
-           /* else if (temples){
+           /* else if (input/data.name == temples){
                 resultDiv.innerHTML += `<h2>${countries.name}</h2>`;
             }
-            else if (beaches){
+            else if (input == beaches){
 
             }*/
             
