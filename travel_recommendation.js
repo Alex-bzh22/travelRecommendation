@@ -19,13 +19,13 @@ function searchDestination() {
            /////////////////////////////////////
             //const key = data.find(item => item.toLowerCase() === input);
             //const key = data.conditions.find(item => item.name.toLowerCase() === input);
-                if (data[input]){
+                if (data[input] && input!="countries"){
                         console.log("key existe : " + data[input])
                         console.log(data[input])
                         data[input].forEach(item => {
                             console.log("pour chaque item le nom : " + item.name);
                             resultDiv.innerHTML += `<h2>${item.name}</h2>`;
-                            resultDiv.innerHTML += `<h2>${item.description}</h2>`;
+                            resultDiv.innerHTML += `<h4>${item.description}</h4>`;
                             resultDiv.innerHTML += `<img src="${item.imageUrl}" alt="description" width="300px">`;
                           });
                         }
@@ -33,8 +33,9 @@ function searchDestination() {
                     console.log("saisie existe : One country" + countries.name)
                     resultDiv.innerHTML += `<h2>${countries.name}</h2>`;
                     countries.cities.forEach(item => {
-                    resultDiv.innerHTML += `<h2>${item.description}</h2>`;
-                    resultDiv.innerHTML += `<img src="${item.imageUrl}" alt="description" width="300px">`;`;
+                    resultDiv.innerHTML += `<h3>${item.name}</h3>`;    
+                    resultDiv.innerHTML += `<h4>${item.description}</h4>`;
+                    resultDiv.innerHTML += `<img src="${item.imageUrl}" alt="description" width="300px">`;
                     });
                 }
 
