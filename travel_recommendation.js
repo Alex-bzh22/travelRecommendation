@@ -35,6 +35,8 @@ function searchDestination() {
                             resultDiv.innerHTML += `<h2>${item.name}</h2>`;
                             resultDiv.innerHTML += `<h2>${item.cities[0].name}</h2>`;
                             resultDiv.innerHTML += `<img src="${item.cities[0].imageUrl}" alt="description" width="300px">`;
+                            resultDiv.innerHTML += `<p></p>`;
+                            resultDiv.innerHTML += `<button id='btnVisit'>Visit</button>`;
                         });
                     }
                     else{
@@ -45,6 +47,8 @@ function searchDestination() {
                             resultDiv.innerHTML += `<h2>${item.name}</h2>`;
                             resultDiv.innerHTML += `<h4>${item.description}</h4>`;
                             resultDiv.innerHTML += `<img src="${item.imageUrl}" alt="description" width="300px">`;
+                            resultDiv.innerHTML += `<p></p>`;
+                            resultDiv.innerHTML += `<button id='btnVisit'>Visit</button>`;
                           });
                         }
                 }
@@ -55,6 +59,8 @@ function searchDestination() {
                     resultDiv.innerHTML += `<h3>${item.name}</h3>`;    
                     resultDiv.innerHTML += `<h4>${item.description}</h4>`;
                     resultDiv.innerHTML += `<img src="${item.imageUrl}" alt="description" width="300px">`;
+                    resultDiv.innerHTML += `<p></p>`;
+                    resultDiv.innerHTML += `<button id='btnVisit'>Visit</button>`;
                     });
                 }
 
