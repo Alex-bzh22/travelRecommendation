@@ -14,6 +14,22 @@
             height: 100vh; /* Hauteur de la fenêtre */
             margin: 0; /* Supprimer la marge par défaut */
         }
+        .container-res{
+            display: flex;
+            justify-content: center; /* Centre horizontalement */
+            align-items: center;     /* Centre verticalement */
+        }
+        .recommand {
+            /*background-color: #ffffff;*/
+            padding: 30px;
+            border-radius: 10px;
+            /*box-shadow: 0 4px 8px rgba(0,0,0,0.1);*/
+            max-width: 800px;
+            width: 90%;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
     </style>
 </head>
 <body>
@@ -61,7 +77,8 @@
   </nav>
   
   <!-- Partie à droite -->
-  <div style="flex: 1; padding: 20px;">
+<div class=container-res>
+  <div class=recommand>
     <h1>EXPLORE YOU NEXT DREAM</h1>
     <p>Give us your idea and we will recommand your next dream destination !</p>
     <div class="searchDestination">
