@@ -13,7 +13,7 @@ function searchDestination() {
         const regexcount = /^country|countries/g;
         let key="";
         if (input.match(regextemp)){
-            console.log("match regex for templessss")
+            console.log("match regex for temples")
             key = "temples";
             }
         else if (input.match(regexcount)){
@@ -72,7 +72,7 @@ function searchDestination() {
             }*/
             
             else {
-              resultDiv.innerHTML = 'Destination not found.';
+              resultDiv.innerHTML = '<h1>Destination not found.<h1>';
             }
 
           })
